@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   check-application:
-    name: evse-job
+    name: build-job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: rogeriocassares/smartcampusmaua-docs:0.2
+          tags: smartcampusmaua/smartcampusmaua-docs:0.2
