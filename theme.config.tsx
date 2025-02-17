@@ -4,16 +4,17 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: <span>SmartCampus Mauá Docs</span>,
   
-  // project: {
-  //   link: 'https://github.com/SmartCampusMaua/smartcampusmaua-nextrav2',
-  // },
+  nextThemes: {
+    defaultTheme: 'light', // Set default theme to light
+  },
+  project: {
+    link: 'https://github.com/SmartCampusMaua/',
+  },
   // chat: {
   //   link: 'https://discord.com',
   // },
   // docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
-  // footer: {
-  //   text: 'Nextra Docs Template',
-  // },
+
   feedback: {
     content: null, // Removes the feedback link
 
@@ -38,6 +39,13 @@ const config: DocsThemeConfig = {
   //       Edit this page
   //     </a>
   //   ),
+  },
+  footer: {
+    text: (
+      <div style={{ padding: '0px', textAlign: 'center', lineHeight: '0', }}>
+        © 2025 SmartCampus Mauá. Todos os direitos reservados.
+      </div>
+    ),
   },
 }
 
