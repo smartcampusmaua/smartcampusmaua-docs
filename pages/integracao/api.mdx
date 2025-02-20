@@ -7,33 +7,22 @@ A API SmartCampus Mauá permite acessar dados de dispositivos conectados ao sist
 
 Esta documentação oferece detalhes sobre como usar a API para consultar dados de dispositivos, com exemplos práticos e explicações claras.
 
-
+Você pode encontrar o código-fonte completo desta documentação no GitHub:
+ [TimeSeries API GitHub Repository](https://github.com/SmartCampusMaua/timeseries-api?tab=readme-ov-file)
 
 ---
 
 ## Endpoints
 
-### 1. **Obter dados de dispositivos dos últimos 30 minutos**
-Este endpoint permite consultar os dados de todos os dispositivos conectados nos últimos 30 minutos.
-
-**URL: https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/LNS/{1}/{2}?interval=30**
-
-
-\{1} - Tipo de Dispositivo:  
-      - SmartLight  
-      - WaterTankLevel  
-      - GaugePressure  
-      - Hydrometer  
-      - EnergyMeter  
-      - WeatherStation  
-
-\{2} - DeviceId ou "all" para todos os dispositivos. 
-
-### 2. **Obter dados de dispositivos em um intervalo de tempo específico**
+### 1. **Obter dados de dispositivos em um intervalo de tempo específico**
 Este endpoint permite consultar os dados de todos os dispositivos conectados em um determindao intervalo de tempo.
 
 **URL: https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/LNS/{1}/{2}?interval={3}**
 
+**URL (todos): https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/LNS/SmartLight/all?interval=60**
+
+**URL (dispositivo específico): https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/LNS/SmartLight/deviceId/0004a30b00e94935?interval=60**
+
 \{1} - Tipo de Dispositivo:  
       - SmartLight  
       - WaterTankLevel  
@@ -41,7 +30,30 @@ Este endpoint permite consultar os dados de todos os dispositivos conectados em 
       - Hydrometer  
       - EnergyMeter  
       - WeatherStation  
+      - VibrationAverage
+      - Temperature8Point
+      - SoilMoisture3DepthLevels
+      - Sprinkler
 
-\{2} - DeviceId ou "all" para todos os dispositivos.
+\{2} - "deviceId/(número do deviceId)" ou "all" para todos os dispositivos.
+
+\{3} - Tempo em minutos. 
+
+### 2. **Obter dados de dispositivos EVSE**
+Este endpoint permite consultar os dados de todos os dispositivos conectados em um determindao intervalo de tempo.
+
+**URL: https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/EVSE/{1}/{2}?interval={3}**
+
+**URL (todos): https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/EVSE/MeterValues/all?interval=30**
+
+**URL (dispositivo específico): https://smartcampus-k8s.maua.br/api/timeseries/v0.3/IMT/EVSE/MeterValues/deviceId/BRIMTE19400577?interval=30**
+
+\{1} - Tipo de Dado:  
+      - StartTransaction  
+      - MeterValues  
+      - StopTransaction  
+      - StatusNotification  
+
+\{2} - "deviceId/(número do deviceId)" ou "all" para todos os dispositivos.
 
 \{3} - Tempo em minutos. 
